@@ -21,14 +21,14 @@ Proje; ilişkisel veritabanı tasarımı (SQL), büyük hacimli veri simülasyon
 - **Dinamik Algoritma:** Yıllara ve mevsimselliğe göre dağılan tutarlı tarih ve sipariş verisi.
 - **Otomasyon:** Tek tıkla binlerce satırlık verinin veritabanına enjekte edilmesi (`generate_seed.py`).
 
-### 📊 Power BI Dashboard (Glassmorphism UI)
-- **Modern Arayüz:** Standart raporlar yerine "Glassmorphism" (Buzlu Cam) tasarım dili.
+### 📊 Power BI & DAX Analitiği
+- **Time Intelligence:** `TOTALYTD`, `PREVIOUSMONTH` gibi DAX fonksiyonları ile zaman serisi analizleri.
+- **KPI Takibi:** Ciro, Aylık Büyüme Oranı (%) ve Ortalama Sepet Tutarı gibi metriklerin dinamik hesaplanması.
 - **Gelişmiş Görseller:**
   - 🌍 Coğrafi Satış Haritası
   - 📈 Aylık Ciro ve Trend Analizi (Area Chart)
   - 📦 En Çok Satan Ürünler (Top 10)
-  - 🛒 Sepet Analizi (Basket Analysis)
-  - 🌳 Kategori Karlılık Haritası (Treemap)
+  - 🌳 Kategori Kârlılık Haritası (Treemap)
 
 ---
 
@@ -40,8 +40,7 @@ e_commerce_analysis/
 ├── views.sql          # Raporlama için özelleştirilmiş SQL görünümleri
 ├── generate_seed.py   # Python ile rastgele veri üretim senaryosu
 ├── seed_data.sql      # (Otomatik üretilen) Veritabanı dolgu verileri
-├── DETAILED_GUIDE.md  # Adım adım kurulum rehberi
-├── DASHBOARD_DESIGN.md # Power BI tasarım yönergeleri
+├── Satis_Analizi.pbix   # Power BI Proje Dosyası (Dashboard)
 └── README.md          # Proje dokümantasyonu
 ```
 
@@ -64,13 +63,14 @@ graph LR
 ## 💻 Kurulum ve Çalıştırma
 
 **1. Veritabanını Hazırlayın**
-PostgreSQL üzerinde `ECommerceDB` adında bir veritabanı oluşturun ve `schema.sql` dosyasını çalıştırın.
+PostgreSQL üzerinde ECommerceDB adında bir veritabanı oluşturun ve schema.sql dosyasını çalıştırın.
 
 **2. Verileri Yükleyin**
-`seed_data.sql` dosyasını çalıştırarak veritabanını örnek verilerle doldurun. (Mevcut `seed_data.sql` 1000+ satır veri içerir).
+`seed_data.sql` dosyasını çalıştırarak veritabanını örnek verilerle doldurun. (Alternatif olarak `generate_seed.py` ile taze veri üretebilirsiniz).
 
-**3. Power BI Bağlantısı**
-Power BI Desktop'ı açın, Veri Al -> PostgreSQL seçeneği ile veritabanına bağlanın ve `vw_Satis_Detay` görünümünü seçin.
+**3. Power BI**
+Raporunu Açın `Satis_Analizi.pbix` dosyasını açın
+**Not:** Veritabanı bağlantı ayarları (Veri Kaynağı Ayarları) sizin yerel PostgreSQL şifrenize göre güncellenmelidir.
 
 ---
 
@@ -82,7 +82,6 @@ Power BI Desktop'ı açın, Veri Al -> PostgreSQL seçeneği ile veritabanına b
 | **Data Generation** | ✅ | Python ile gerçekçi veri üretimi sağlandı. |
 | **Data Visualization** | ✅ | Power BI ile interaktif dashboard. |
 | **SQL Views** | ✅ | Veri modelleme SQL tarafında yapıldı. |
-| **UI/UX Design** | 🌟 | Glassmorphism modern tasarım uygulandı. |
 
 ---
 
@@ -92,5 +91,5 @@ Power BI Desktop'ı açın, Veri Al -> PostgreSQL seçeneği ile veritabanına b
 *İş Zekası & Veri Analitiği Uzmanı Adayı*
 
 * **GitHub:** [hsynpng](https://github.com/hsynpng/)
-* **Proje:** [Repo Linki](https://github.com/hsynpng/e-commerce-sales-analysis-placeholder)
+* **Proje:** [Repo Linki](https://github.com/hsynpng/yetgim-data-analytics-ecommerce-project)
 * **Bootcamp:** Pendik Belediyesi YETGİM - Data Analytics Bootcamp
